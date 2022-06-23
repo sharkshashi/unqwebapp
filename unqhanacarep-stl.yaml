@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unqhanacarep-deployment-stl
+  labels:
+    app: unqhanacarep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: unqhanacarep
+  template:
+    metadata:
+      labels:
+        app: unqhanacarep
+    spec:
+      containers:
+      - name: unqhanacarep
+        image: sharkshashi/unq_hanacarepack_web:v1
+        ports:
+        - containerPort: 80
+      tolerations:
+      - key: "node.kubernetes.io/unreachable"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 10
+      - key: "node.kubernetes.io/not-ready"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 10
