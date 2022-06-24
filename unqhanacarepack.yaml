@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unqhanacarep-deployment-stl
+  name: unqhanacarep-deployment-stl-demo
   labels:
     app: unqhanacarep
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: unqhanacarep
-        image: sharkshashi/unq_hanacarepack_web:v1
+        image: sharkshashi/unqwebapp:latest
         ports:
         - containerPort: 80
       tolerations:
