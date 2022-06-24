@@ -3,7 +3,7 @@
 
 FROM centos:7
 
-#LABEL version="v1"
+###LABEL version="v1"
 LABEL maitainer="shashikant.m@uniquesolutionsit.com"
 
 RUN yum -y install httpd
