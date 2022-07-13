@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unqhanacarep-deployment-stl-demo
+  name: unqhanacarep
+  namespace: unqhanacarep
   labels:
     app: unqhanacarep
 spec:
