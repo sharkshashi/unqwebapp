@@ -6,7 +6,7 @@ metadata:
   labels:
     app: unqhanacarep
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: unqhanacarep
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: unqhanacarep
-        image: sharkshashi/unqwebapp:latest
+        image: sharkshashi/unqwebapp:1.0.1
         ports:
         - containerPort: 80
       tolerations:
