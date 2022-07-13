@@ -9975,12 +9975,12 @@ footer#colophon a {
 }
 h2.page-title span.titleinner:before {
     content: '';
-    background: #FD8200;
+    background: #28a745;
     position: absolute;
-    height: 4px;
-    width: 75px;
+    height: 50px;
+    width: 250px;
     margin: -30px 0 0 0;
-    top: 38%;
+    top: 10%;
 }
  span.titleinner {
     max-width: 620px;
