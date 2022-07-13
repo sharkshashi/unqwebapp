@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
       - name: unqhanacarep
-        image: sharkshashi/unqwebapp:latest
+        image: sharkshashi/unqwebapp:1.0.1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
       tolerations:
       - key: "node.kubernetes.io/unreachable"
         operator: "Exists"
