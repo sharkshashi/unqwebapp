@@ -9975,7 +9975,7 @@ footer#colophon a {
 }
 h2.page-title span.titleinner:before {
     content: '';
-    background: #28a745;
+    background: #f29f42;
     position: absolute;
     height: 50px;
     width: 250px;
