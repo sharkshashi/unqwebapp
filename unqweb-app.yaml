@@ -1,40 +1,47 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: unqweb-app
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: unqhanacarep-service
+  name: unqweb-app
+  namespace: unqweb-app
 spec:
-  selector:
-    app: unqhanacarep 
   type: NodePort
+  selector:
+    app: unqweb-app
   ports:
-  - protocol: TCP
-    targetPort: 8080
-    nodePort: 30002
-
+    - name: web
+      port: 80
+      targetPort: 80
+      nodePort: 30002
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unqhanacarep
-  namespace: unqhanacarep
+  name: unqweb-app
+  namespace: unqweb-app
   labels:
-    app: unqhanacarep
+    app: unqweb-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: unqhanacarep
+      app: unqweb-app
   template:
     metadata:
       labels:
-        app: unqhanacarep
+        app: unqweb-app
     spec:
       containers:
-      - name: unqhanacarep
-        image: sharkshashi/unqwebapp:1.0.3
+      - name: unqweb-app
+        image: sharkshashi/unqwebapp:latest
         ports:
         - containerPort: 8080
+          name: web
+          protocol: TCP
       tolerations:
       - key: "node.kubernetes.io/unreachable"
         operator: "Exists"
@@ -44,6 +51,3 @@ spec:
         operator: "Exists"
         effect: "NoExecute"
         tolerationSeconds: 10
-
-
-
