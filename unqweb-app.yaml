@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: unqweb-app
-        image: sharkshashi/unqwebapp:1.0.4
+        image: sharkshashi/unqwebapp:latest
         ports:
         - containerPort: 8080
           name: web
